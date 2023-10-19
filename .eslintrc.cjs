@@ -15,6 +15,8 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+      
     ],
+    'react/prop-types':[disabled] //* disabling eslint prop-types all warnings
   },
 }
