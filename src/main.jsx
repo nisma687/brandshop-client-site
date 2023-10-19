@@ -8,13 +8,20 @@ import {
 } from "react-router-dom";
 import Authprovider from './providers/Authprovider.jsx';
 import Error from './layouts/Error.jsx';
+import Home from './layouts/Home.jsx';
+import Login from './layouts/Login.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children:[
       {
-        
+        path:'/home',
+        element:<Home/>
+      },
+      {
+        path:'/logIn',
+        element:<Login/>
       }
     ]
   },
