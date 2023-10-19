@@ -7,11 +7,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Authprovider from './providers/Authprovider.jsx';
+import Error from './layouts/Error.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children:[
+      {
+        
+      }
+    ]
   },
+  {
+    path:'*',
+    element:<Error/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
