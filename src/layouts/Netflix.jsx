@@ -5,11 +5,11 @@ const Netflix = () => {
     const data=useLoaderData();
 
 
-    const handleAddtoCart=(_id)=>{
+    const handleAddtoCart=(_id,name,price)=>{
 
         console.log("Add to cart");
-        console.log(_id);
-        const id={_id};
+        console.log(_id,name,price);
+        const id={_id,name,price};
         fetch('http://localhost:5000/cart',
          {
             method: 'POST',
@@ -52,7 +52,7 @@ const Netflix = () => {
            className="btn btn-primary">UPDATE</Link>
            <Link 
 
-           onClick={()=>handleAddtoCart(data._id)}
+           onClick={()=>handleAddtoCart(data._id,data.name,data.price)}
             className="btn btn-primary">Add to Cart</Link>
         </div>
       </div>
