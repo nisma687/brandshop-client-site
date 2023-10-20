@@ -1,14 +1,37 @@
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
+import './Navbar.css'
 
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext);
+  console.log(user);
     const navlinks=<>
-    <li><NavLink to="/home">Home</NavLink></li>
-    <li><NavLink to="/addProduct">Add Product</NavLink></li>
-    <li><NavLink to="/myCart">My Cart</NavLink></li>
-    <li><NavLink to="/logIn">Login</NavLink></li>
-    <li><NavLink to="/signUp">SignUp</NavLink></li>
+    <li><NavLink activeclassname="active"
+     to="/home">Home</NavLink></li>
+    <li><NavLink
+     activeclassname="active" to="/addProduct">Add Product</NavLink></li>
+    <li><NavLink 
+    activeclassname="active"
+    to="/myCart">My Cart</NavLink></li>
+    <li><NavLink
+    activeclassname="active"
+     to="/logIn">Login</NavLink></li>
+    <li><NavLink 
+    activeclassname="active"
+    to="/signUp">SignUp</NavLink></li>
     </>
+    const handleLogOut=()=>
+    {
+      logOut()
+      .then(res=>{
+        console.log(res);
+      })
+      .catch(error=>{
+        console.log(error.message);
+      })
+    }
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -26,10 +49,24 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
         {navlinks}
+        
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+     {
+      user && <div className="flex">
+        <img src={user.photoURL} alt="" className="w-10 h-10 rounded-full mr-2"/>
+        <span className="text-xl mr-2 font-semibold">{user.displayName}</span>
+      </div>
+    }
+    {
+      user? <button to="/"
+      onClick={handleLogOut}
+       className="btn btn-outline btn-primary">
+
+       LogOut</button>:
+      <Link to="/logIn" className="btn btn-outline btn-primary">LogIn</Link>
+    }
   </div>
 </div>
     );
