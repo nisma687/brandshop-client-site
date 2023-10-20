@@ -12,7 +12,7 @@ const DetailsProduct = () => {
             <h3 className="text4xl">Details of the product</h3>
           <div className="grid grid-cols-4 justify-between gap-3">
           <Link to="/netflix" className="btn btn-primary">Netflix</Link>
-           <Link to="/netflix" className="btn btn-primary">Netflix</Link>
+           <Link to="/disney" className="btn btn-primary">Disney</Link>
            <Link to="/netflix" className="btn btn-primary">Netflix</Link>
            <Link to="/netflix" className="btn btn-primary">Netflix</Link>
             </div>

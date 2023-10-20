@@ -1,10 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
-
-
-
-const Update = () => {
-  const product=useLoaderData();
+const UpdateDisney = () => {
+    const product=useLoaderData();
     console.log(product);
     const {_id,name,type,price,description,rating,img_url}=product;
     console.log(product);
@@ -27,7 +24,7 @@ const Update = () => {
             rating,
             img_url
         }
-        fetch(`http://localhost:5000/netflix/${_id}`,{
+        fetch(`http://localhost:5000/disney/${_id}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -162,4 +159,4 @@ const Update = () => {
     );
 };
 
-export default Update;
+export default UpdateDisney;

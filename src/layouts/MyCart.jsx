@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+
+import { useLoaderData } from 
+'react-router-dom';
 
 const MyCart = () => {
     const cart=useLoaderData();
@@ -10,15 +12,23 @@ const MyCart = () => {
     console.log(carts);
     const handleDelete=(_id)=>{
         console.log("delete",_id);
-        fetch(`http://localhost:5000/cart/${_id}`,{
+        fetch(`http://localhost:5000/cart/${_id}`,
+        {
             method:'DELETE'
         })
         .then(res=>res.json())
         .then(result=>{
             console.log(result);
-            alert("Deleted from Cart");
-            const remainingCarts=carts.filter(cart=>cart._id!==_id);
-            setCarts(remainingCarts);
+            if(result.deletedCount>0)
+            {
+                alert("Deleted from Cart");
+
+                const remainingCarts=
+            carts.filter(cart=>cart._id!==_id);
+
+                setCarts(remainingCarts);
+            }
+           
         })
     }
 
@@ -39,7 +49,7 @@ const MyCart = () => {
     <tbody>
      {
         carts.map((item) => (
-          <tr key={item.id}>
+          <tr key={item._id}>
             <td>{item.name}</td>
             <td>{item.price}</td>
             <td><button onClick={()=>handleDelete(item._id)} className='btn'>X</button></td>

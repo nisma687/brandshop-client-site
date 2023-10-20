@@ -19,10 +19,10 @@ import Details from './layouts/Details.jsx';
 import Update from './layouts/Update.jsx';
 import MyCart from './layouts/MyCart.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
-// import { AuthContext } from './providers/AuthProvider.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
+import Disney from './layouts/Disney.jsx';
+import UpdateDisney from './layouts/UpdateDisney.jsx';
 
-
-// const {setLoading}=useContext(AuthContext);
 
 const router = createBrowserRouter([
   
@@ -47,7 +47,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProduct',
-        element:<AddProduct/>
+        element:<PrivateRoute>
+          <AddProduct/>
+          </PrivateRoute>
       },
       {
         path:'/details',
@@ -55,6 +57,7 @@ const router = createBrowserRouter([
         
         
       },
+      
       {
         path:'/netflix',
         element:<Netflix/>,
@@ -67,14 +70,29 @@ const router = createBrowserRouter([
         loader:({params})=> fetch(`http://localhost:5000/netflix/${params.id}`)
       },
       {
+        path:'/disney',
+        element:<Disney/>,
+        loader:()=> fetch('http://localhost:5000/disney')
+
+      },
+      {
+        path:'/disney/:id',
+        element:<UpdateDisney/>,
+        loader:({params})=> fetch(`http://localhost:5000/disney/${params.id}`)
+      },
+      {
         path:'/update/:id',
-        element:<Update/>,
+        element:<PrivateRoute>
+          <Update/>
+          </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/netflix/${params.id}`)
 
       },
       {
         path:'/myCart',
-        element:<MyCart/>,
+        element:<PrivateRoute>
+          <MyCart/>
+          </PrivateRoute>,
         loader:()=> fetch('http://localhost:5000/cart')
         
       }
