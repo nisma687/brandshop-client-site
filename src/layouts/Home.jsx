@@ -1,11 +1,20 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
+import Product from "./Product";
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
 
 
 const Home = () => {
     const products=useLoaderData();
     console.log(products);
+    const {setLoading}=useContext(AuthContext);
+    setLoading(false);
+    if(!products){
+        return <div className="text-center text-2xl">Loading...</div>
+    }
+    
 
     return (
         <div>
@@ -15,24 +24,10 @@ const Home = () => {
             mt-4 mb-4 max-w-4xl mx-auto gap-5">
                
             {
-                products.map((product)=>{
-                    return(
-                        <div key={product._id}>
-            <div className="card  bg-base-100 shadow-xl">
-        <figure>
-            <img src={product.img_url} alt="Album"/>
-            </figure>
-        <div className="card-body ">
-         <h2 className=" text-center font-bold">{product.name}</h2>
-            
-        <div className=" flex justify-center ">
-      <button className="btn btn-primary">Details</button>
-    </div>
-  </div>
-</div>
-                        </div>
-                    )
-                })
+                products.map((product)=><Product
+                key={product._id}
+                product={product}
+                ></Product>)
             }
             </div>
             <Footer/>
