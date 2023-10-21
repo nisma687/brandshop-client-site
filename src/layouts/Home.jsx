@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Product from "./Product";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
+import AddedSoon from "../components/AddedSoon";
+import Achievemnet from "../components/Achievemnet";
 
 
 const Home = () => {
@@ -29,7 +31,23 @@ const Home = () => {
                 product={product}
                 ></Product>)
             }
+            
+            
             </div>
+            <div className="mt-2 mb-2 max-w-4xl mx-auto">
+                <h3 className="text-2xl
+                text-center
+                font-semibold text-purple-600">Coming soon...</h3>
+            <AddedSoon/>
+            </div>
+            <div className="mt-2 mb-2 max-w-4xl mx-auto">
+                <h3 className="text-2xl
+                text-center
+                font-semibold text-purple-600">Our AchieveMent:</h3>
+                <Achievemnet/>
+            </div>
+            
+
             <Footer/>
         </div>
     );
