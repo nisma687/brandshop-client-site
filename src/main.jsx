@@ -22,6 +22,8 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Disney from './layouts/Disney.jsx';
 import UpdateDisney from './layouts/UpdateDisney.jsx';
+import Spotify from './layouts/Spotify.jsx';
+import UpdateSpotify from './layouts/UpdateSpotify.jsx';
 
 
 const router = createBrowserRouter([
@@ -79,6 +81,16 @@ const router = createBrowserRouter([
         path:'/disney/:id',
         element:<UpdateDisney/>,
         loader:({params})=> fetch(`http://localhost:5000/disney/${params.id}`)
+      },
+      {
+        path:'/spotify',
+        element:<Spotify/>,
+        loader:()=> fetch('http://localhost:5000/spotify')
+      },
+      {
+        path:'/spotify/:id',
+        element:<UpdateSpotify/>,
+        loader:({params})=> fetch(`http://localhost:5000/spotify/${params.id}`)
       },
       {
         path:'/update/:id',

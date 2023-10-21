@@ -19,7 +19,7 @@ const AddProduct = () => {
             rating,
             img_url
         }
-        fetch("http://localhost:5000/disney",{
+        fetch("http://localhost:5000/spotify",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
