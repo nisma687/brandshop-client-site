@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path:'/home',
         element: <Home/>,
-        loader:()=> fetch('http://localhost:5000/product')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/product')
      
         
       },
@@ -69,18 +69,18 @@ const router = createBrowserRouter([
       {
         path:'/netflix',
         element:<Netflix/>,
-        loader:()=> fetch('http://localhost:5000/netflix')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix')
 
       },
       {
         path:'/netflix/:id',
         element:<Details/>,
-        loader:({params})=> fetch(`http://localhost:5000/netflix/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix/${params.id}`)
       },
       {
         path:'/disney',
         element:<Disney/>,
-        loader:()=> fetch('http://localhost:5000/disney')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/disney')
 
       },
       {
@@ -88,24 +88,24 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <UpdateDisney/>
           </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/disney/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/disney/${params.id}`)
       },
       {
         path:'/spotify',
         element:<Spotify/>,
-        loader:()=> fetch('http://localhost:5000/spotify')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/spotify')
       },
       {
         path:'/spotify/:id',
         element:<PrivateRoute>
           <UpdateSpotify/>
           </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/spotify/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/spotify/${params.id}`)
       },
       {
         path:'/warner',
         element:<Warner/>,
-        loader:()=> fetch('http://localhost:5000/warner')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/warner')
 
       },
       {
@@ -113,13 +113,13 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <UpdateWarner/>
           </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/warner/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/warner/${params.id}`)
 
       },
       {
         path:'/sony',
         element:<Sony/>,
-        loader:()=> fetch('http://localhost:5000/sony')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/sony')
 
       },
       {
@@ -127,13 +127,13 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <UpdateSony/>
           </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/sony/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/sony/${params.id}`)
 
       },
       {
         path:'/timewarner',
         element:<TimeWarner/>,
-        loader:()=> fetch('http://localhost:5000/timewarner')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/timewarner')
 
       },
       {
@@ -141,14 +141,14 @@ const router = createBrowserRouter([
         element:<PrivateRoute> 
           <UpdateTimeWarner/>
            </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/timewarner/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/timewarner/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoute>
           <Update/>
           </PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/netflix/${params.id}`)
+        loader:({params})=> fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix/${params.id}`)
 
       },
       {
@@ -156,7 +156,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <MyCart/>
           </PrivateRoute>,
-        loader:()=> fetch('http://localhost:5000/cart')
+        loader:()=> fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart')
         
       }
     ]

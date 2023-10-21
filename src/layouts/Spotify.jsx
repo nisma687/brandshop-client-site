@@ -1,4 +1,5 @@
 import {Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Spotify = () => {
     const data=useLoaderData();
@@ -8,7 +9,7 @@ const Spotify = () => {
         console.log("Add to cart");
         console.log(_id,name,price);
         const id={_id,name,price};
-        fetch('http://localhost:5000/cart',
+        fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart',
          {
             method: 'POST',
             headers: {
@@ -20,7 +21,13 @@ const Spotify = () => {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            alert("Added to Cart");
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Added to the cart',
+              showConfirmButton: false,
+              timer: 1500
+            })
         })
         
     }

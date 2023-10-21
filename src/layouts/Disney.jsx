@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Disney = () => {
 
@@ -10,7 +11,7 @@ const Disney = () => {
         console.log("Add to cart");
         console.log(_id,name,price);
         const id={_id,name,price};
-        fetch('http://localhost:5000/cart',
+        fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart',
          {
             method: 'POST',
             headers: {
@@ -22,7 +23,13 @@ const Disney = () => {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            alert("Added to Cart");
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: ' Added to cart',
+              showConfirmButton: false,
+              timer: 1500
+            })
         })
         
     }

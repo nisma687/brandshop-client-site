@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateWarner = () => {
@@ -25,14 +26,20 @@ const UpdateWarner = () => {
             rating,
             img_url
         }
-        fetch(`http://localhost:5000/warner/${_id}`,{
+        fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/warner/${_id}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify(product)
         }).then(()=>{
-            alert("Product Updated Successfully");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
             form.reset();
         }).catch((err)=>{
             alert("Error while updating product");

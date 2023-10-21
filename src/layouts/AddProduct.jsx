@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddProduct = () => {
@@ -19,14 +20,21 @@ const AddProduct = () => {
             rating,
             img_url
         }
-        fetch("http://localhost:5000/netflix",{
+        fetch("https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify(product)
         }).then(()=>{
-            alert("Product Added Successfully");
+            // alert("Product Added Successfully");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Product has been added',
+                showConfirmButton: false,
+                timer: 1500
+              })
             form.reset();
         }).catch((err)=>{
             alert("Error while adding product");
