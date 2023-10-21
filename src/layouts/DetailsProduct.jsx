@@ -16,7 +16,7 @@ const DetailsProduct = () => {
            <Link to="/warner" className="btn btn-primary">Warner</Link>
            <Link to="/sony" className="btn btn-primary">Sony</Link>
               <Link to="/disney" className="btn btn-primary">Disney</Link>
-                <Link to="/disney" className="btn btn-primary">Disney</Link>
+                <Link to="/timewarner" className="btn btn-primary">Time Warner</Link>
             </div>
 
             

@@ -24,6 +24,12 @@ import Disney from './layouts/Disney.jsx';
 import UpdateDisney from './layouts/UpdateDisney.jsx';
 import Spotify from './layouts/Spotify.jsx';
 import UpdateSpotify from './layouts/UpdateSpotify.jsx';
+import Warner from './layouts/Warner.jsx';
+import Sony from './layouts/Sony.jsx';
+import UpdateSony from './layouts/UpdateSony.jsx';
+import UpdateWarner from './layouts/UpdateWarner.jsx';
+import TimeWarner from './layouts/TimeWarner.jsx';
+import UpdateTimeWarner from './layouts/UpdateTimeWarner.jsx';
 
 
 const router = createBrowserRouter([
@@ -91,6 +97,41 @@ const router = createBrowserRouter([
         path:'/spotify/:id',
         element:<UpdateSpotify/>,
         loader:({params})=> fetch(`http://localhost:5000/spotify/${params.id}`)
+      },
+      {
+        path:'/warner',
+        element:<Warner/>,
+        loader:()=> fetch('http://localhost:5000/warner')
+
+      },
+      {
+        path:'/warner/:id',
+        element:<UpdateWarner/>,
+        loader:({params})=> fetch(`http://localhost:5000/warner/${params.id}`)
+
+      },
+      {
+        path:'/sony',
+        element:<Sony/>,
+        loader:()=> fetch('http://localhost:5000/sony')
+
+      },
+      {
+        path:'/sony/:id',
+        element:<UpdateSony/>,
+        loader:({params})=> fetch(`http://localhost:5000/sony/${params.id}`)
+
+      },
+      {
+        path:'/timewarner',
+        element:<TimeWarner/>,
+        loader:()=> fetch('http://localhost:5000/timewarner')
+
+      },
+      {
+        path:'/timewarner/:id',
+        element:<UpdateTimeWarner/>,
+        loader:({params})=> fetch(`http://localhost:5000/timewarner/${params.id}`)
       },
       {
         path:'/update/:id',
