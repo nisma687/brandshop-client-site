@@ -19,7 +19,7 @@ const AddProduct = () => {
             rating,
             img_url
         }
-        fetch("http://localhost:5000/spotify",{
+        fetch("http://localhost:5000/netflix",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -36,7 +36,8 @@ const AddProduct = () => {
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-3xl text-center font-bold italic mb-2">Add Product </h2>
-            <p className="text-xl font-semibold mb-2 text-center">To add a product fill the form</p>
+            <p className="text-xl font-semibold mb-2 text-center">
+                To add a product fill the form</p>
             <form onSubmit={handleAddProduct}>
           
             <div className="md:flex mb-8">
@@ -47,7 +48,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Name" 
-        name="name"
+        name="name" required
         className="input input-bordered w-full" />
             </label>
             </div>
@@ -66,7 +67,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Type of your Product" 
-        name="type"
+        name="type" required
         className="input input-bordered w-full" />
             </label>
             </div>
@@ -78,7 +79,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Price" 
-        name="price"
+        name="price" required
         className="input input-bordered w-full" />
             </label>
             </div>
@@ -95,7 +96,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Description of the product" 
-        name="description"
+        name="description" required
         className="input input-bordered w-full" />
             </label>
             </div>
@@ -107,7 +108,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Rating" 
-        name="rating"
+        name="rating" required
         className="input input-bordered w-full" />
             </label>
             </div>
@@ -124,7 +125,7 @@ const AddProduct = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Image Url" 
-        name="img_url"
+        name="img_url" required
         className="input input-bordered w-full" />
             </label>
             </div>

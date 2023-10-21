@@ -27,10 +27,41 @@ const Spotify = () => {
    
    
     return (
-        <div className="grid md:grid-cols-2 
+        <div className=" 
         mt-4 mb-4 max-w-4xl mx-auto gap-5">
+
+<h2 className="text-4xl text-bold text-purple-600 mb-4">Most popular at this site......</h2>
+
+<div className="carousel w-full ">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/fqSvFpM/s1.jpg" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide2" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide2" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/Tc71ZVv/s2.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" className="btn btn-circle">❮</a> 
+      <a href="#slide3" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide3" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/47VnD5R/s4.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" className="btn btn-circle">❮</a> 
+      <a href="#slide1" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+ 
+</div>
+   
+
+        <h4 className="text-3xl text-center font-semibold text-purple-500 mb-4">All the Services For this Brand We Have:</h4>
            
-        {
+      <div className='grid md:grid-cols-2 gap-5 mt-4 mb-3'>
+      {
             data.map((data)=><div 
             key={data._id}
             className="card  bg-base-100 shadow-xl">
@@ -56,6 +87,13 @@ const Spotify = () => {
       </div>
     </div>)
         }
+      </div>
+
+
+
+
+
+
         </div>
     );
 };

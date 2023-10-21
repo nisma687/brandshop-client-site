@@ -85,7 +85,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/disney/:id',
-        element:<UpdateDisney/>,
+        element:<PrivateRoute>
+          <UpdateDisney/>
+          </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/disney/${params.id}`)
       },
       {
@@ -95,7 +97,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/spotify/:id',
-        element:<UpdateSpotify/>,
+        element:<PrivateRoute>
+          <UpdateSpotify/>
+          </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/spotify/${params.id}`)
       },
       {
@@ -106,7 +110,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/warner/:id',
-        element:<UpdateWarner/>,
+        element:<PrivateRoute>
+          <UpdateWarner/>
+          </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/warner/${params.id}`)
 
       },
@@ -118,7 +124,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/sony/:id',
-        element:<UpdateSony/>,
+        element:<PrivateRoute>
+          <UpdateSony/>
+          </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/sony/${params.id}`)
 
       },
@@ -130,7 +138,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/timewarner/:id',
-        element:<UpdateTimeWarner/>,
+        element:<PrivateRoute> 
+          <UpdateTimeWarner/>
+           </PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/timewarner/${params.id}`)
       },
       {

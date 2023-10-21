@@ -29,9 +29,45 @@ const Netflix = () => {
    
     // console.log(data);
     return (
-        <div className="grid md:grid-cols-2 
-        mt-4 mb-4 max-w-4xl mx-auto gap-5">
+        <div className=" 
+        mt-4 mb-4 max-w-4xl mx-auto ">
+            <h2 className="text-4xl text-bold text-purple-600 mb-4">Most popular at this site......</h2>
+
+<div className="carousel w-full ">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/jTN8YvW/n5.jpg" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide2" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide2" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/hccHXQX/n2.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" className="btn btn-circle">❮</a> 
+      <a href="#slide3" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide3" className="carousel-item relative w-full">
+    <img src="https://i.ibb.co/NWcqXpp/disneyland.jpg" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" className="btn btn-circle">❮</a> 
+      <a href="#slide1" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  
+</div>
+   
+
+        <h4 className="text-3xl text-center font-semibold text-purple-500 mb-4">All the Services For this Brand We Have:</h4>
+
+
+
+
+
+
            
+        <div className="grid md:grid-cols-2 mt-2 mb-4 gap-5">
         {
             data.map((data)=><div 
             key={data._id}
@@ -58,6 +94,7 @@ const Netflix = () => {
       </div>
     </div>)
         }
+        </div>
         </div>
     );
 };
