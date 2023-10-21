@@ -9,7 +9,7 @@ This project is all about entertainment and media brands.where a user has some f
 
 ## server deploy link: https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app (vercel has been used for deploying server side)
 
-
+## live at-https://media-store-6b912.web.app 
 
 ## Features
 
