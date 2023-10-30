@@ -28,7 +28,7 @@ const MyCart = () => {
               'Your file has been deleted.',
               'success'
             )
-            fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart/${_id}`,
+            fetch(`https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/cart/${_id}`,
             {
                 method:'DELETE'
             })
@@ -49,7 +49,7 @@ const MyCart = () => {
           }
         })
         
-        // fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart/${_id}`,
+        // fetch(`https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/cart/${_id}`,
         // {
         //     method:'DELETE'
         // })

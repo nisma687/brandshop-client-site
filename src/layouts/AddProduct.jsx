@@ -20,7 +20,7 @@ const AddProduct = () => {
             rating,
             img_url
         }
-        fetch("https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix",{
+        fetch("https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/netflix",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

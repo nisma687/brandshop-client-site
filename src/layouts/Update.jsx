@@ -28,7 +28,7 @@ const Update = () => {
             rating,
             img_url
         }
-        fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/netflix/${_id}`,{
+        fetch(`https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/netflix/${_id}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"

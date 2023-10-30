@@ -11,7 +11,7 @@ const Netflix = () => {
         console.log("Add to cart");
         console.log(_id,name,price);
         const id={_id,name,price};
-        fetch('https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/cart',
+        fetch('https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/cart',
          {
             method: 'POST',
             headers: {

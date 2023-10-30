@@ -25,7 +25,7 @@ const UpdateTimeWarner = () => {
             rating,
             img_url
         }
-        fetch(`https://media-store-server-ffaumifm6-nismahossain41982-gmailcom.vercel.app/timewarner/${_id}`,{
+        fetch(`https://media-store-server-bakkboswo-nismahossain41982-gmailcom.vercel.app/timewarner/${_id}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
